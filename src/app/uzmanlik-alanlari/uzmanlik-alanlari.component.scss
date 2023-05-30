@@ -1,0 +1,39 @@
+.uzmanlik-alanlari {
+  padding: 3% 20%;
+  text-align: center;
+
+  background-color: #1f1b1c;
+  padding-bottom: 6%;
+  h1 {
+    color: white;
+    padding-bottom: 5%;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1em;
+}
+.card {
+  height: 20vh;
+  width: 100%;
+  min-width: 120px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: white;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+.card:hover {
+  transition: 0.5s;
+  opacity: 0.7;
+  span {
+    color: black;
+  }
+}

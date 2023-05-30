@@ -1,0 +1,8 @@
+<div class="uzmanlik-alanlari">
+  <h1>Uzmanlık Alanları</h1>
+  <div class="cards">
+    <div *ngFor="let uzmanlik of uzmanlikAlanlar;let index = index" class="card" [style.background-image]="'url(assets/uzmanlik-bg/bg-' + index + '.jpg)'">
+      <span> {{uzmanlik}} </span>
+    </div>
+  </div>
+</div>

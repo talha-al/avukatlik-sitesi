@@ -1,0 +1,177 @@
+.section-1 {
+  background: url(/assets/books.jpg);
+  background-color: #1e7a7a;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 20vh;
+    height: 4vh;
+  }
+}
+
+.text-2 {
+  font-size: 1.4em;
+  font-weight: 500;
+  z-index: 5;
+  line-height: 40px;
+  color: rgb(255, 255, 255);
+  font-family: Lato;
+  visibility: inherit;
+  transition: none 0s ease 0s;
+  text-align: left;
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: 0px;
+  opacity: 1;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform-origin: 50% 50% 0px;
+  padding-bottom: 0.8em;
+}
+
+.text {
+  font-size: 2.8em;
+  font-weight: 700;
+  z-index: 5;
+  line-height: 40px;
+  color: rgb(255, 255, 255);
+  font-family: Lato;
+  visibility: inherit;
+  transition: none 0s ease 0s;
+  text-align: left;
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: 0px;
+  opacity: 1;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform-origin: 50% 50% 0px;
+  padding-bottom: 0.8em;
+}
+
+.section {
+  padding: 3% 20%;
+  text-align: center;
+}
+
+.description {
+  text-align: start;
+  line-height: 1.7;
+}
+
+.hakkimizda-container {
+  @extend .section;
+  flex-direction: row;
+  display: flex;
+  box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
+  -moz-box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
+  -webkit-box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
+}
+
+.uzmanlik-alanlari {
+  @extend .section;
+  background-color: #1f1b1c;
+  padding-bottom: 6%;
+  h1 {
+    color: white;
+    padding-bottom: 5%;
+  }
+}
+
+.ekibimiz {
+  @extend .section;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1em;
+}
+.card {
+  height: 20vh;
+  width: 100%;
+  min-width: 120px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: white;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+.card:hover {
+  transition: 0.5s;
+  opacity: 0.7;
+  span {
+    color: black;
+  }
+}
+
+.avukat-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// .avukat-card{
+//   height: 20vh;
+//   width: 19%;
+//   min-width: 120px;
+//   margin: 0.5%;
+//   background: url(/assets/books.jpg);
+//   display: flex;
+//   justify-content: center;
+//   align-items: end;
+//   span{
+//     color: white;
+//     font-size: 1.4em;
+//     font-weight: 500;
+//     text-align: center;
+//   }
+// }
+
+.example-card {
+  max-width: 300px;
+  min-width: 150px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  animation: grow 1.5s ease-out;
+  cursor: pointer;
+}
+
+.example-card:hover {
+  overflow: hidden;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  img {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
+    opacity: 0.8;
+  }
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.p-r-1 {
+  padding-right: 2.5em;
+}
