@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-menu-header',
@@ -11,9 +11,29 @@ export class MenuHeaderComponent {
   linkFaceBook = LinkConstants.linkFaceBook;
   linkLinkedin = LinkConstants.linkLinkedin;
   linkTwitter = LinkConstants.linkTwitter;
+  isSmallScreen: boolean = false;
+  menuToggle!: HTMLElement;
+  menu!: HTMLElement;
+
+  categories = [
+    { name: 'Home', id: 'home' },
+    { name: 'About Me', id: 'aboutUs' },
+    { name: 'Photos', id: 'photos' },
+    { name: 'Contact', id: 'contact' },
+  ];
 
   goToLink(link: string) {
     window.open(link);
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    if (window.screen.width < 600) {
+      this.isSmallScreen = true;
+
+    } else {
+      this.isSmallScreen = false;
+    }
   }
 }
 

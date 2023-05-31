@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./uzmanlik-alanlari.component.scss']
 })
 export class UzmanlikAlanlariComponent {
-  uzmanlikAlanlar=[
+  uzmanlikAlanlar = [
     "Şirketler Hukuku",
     "Ceza Hukuku",
     "İş Hukuku",
@@ -16,5 +16,4 @@ export class UzmanlikAlanlariComponent {
     "Uzmanlık Alanları",
     "Uzmanlık Alanları",
   ]
-
 }

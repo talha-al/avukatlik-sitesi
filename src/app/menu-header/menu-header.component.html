@@ -1,4 +1,4 @@
-<div class="sub-header">
+<div *ngIf="!isSmallScreen" class="sub-header">
   <div class="info">
     <div class="cell">
       <mat-icon>call</mat-icon>
@@ -22,7 +22,7 @@
   <div class="logo">
     <a href="#"> <img src="assets/logo.png"> </a>
   </div>
-  <nav>
+  <nav *ngIf="!isSmallScreen" class="nav-menu">
     <ul>
       <li><a href="">Anasayfa</a></li>
       <li><a href="#">Hakkımızda</a></li>
@@ -32,4 +32,18 @@
       <li><a href="#">İletişim</a></li>
     </ul>
   </nav>
+  <div *ngIf="isSmallScreen" class="menu-icon" fxLayoutAlign="end center">
+    <button mat-button [matMenuTriggerFor]="belowMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #belowMenu="matMenu" class="small-menu" yPosition="below">
+      <div *ngFor="let cat of categories">
+        <div class="category" fxFlex="1 1 auto" color="primary">
+          {{ cat.name }}
+        </div>
+      </div>
+    </mat-menu>
+  </div>
+
 </div>
+

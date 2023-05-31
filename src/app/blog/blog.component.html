@@ -1,0 +1,14 @@
+<div class="container">
+  <h3>MAKALE</h3>
+  <mat-form-field style="width: 50%;" appearance="outline">
+    <mat-label>Başlık girin</mat-label>
+    <input matInput type="text" placeholder="Başlık girin" class="header-input" [(ngModel)]="headerInput">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Makale yazın</mat-label>
+    <textarea matInput [(ngModel)]="articleInput" placeholder="Makale yazın" class="article-input"></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" class="submit-button" (click)="submit()">Gönder</button>
+  </div>
+</div>

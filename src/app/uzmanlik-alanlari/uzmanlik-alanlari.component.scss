@@ -1,5 +1,5 @@
 .uzmanlik-alanlari {
-  padding: 3% 20%;
+  padding: 3% 15%;
   text-align: center;
 
   background-color: #1f1b1c;
@@ -31,9 +31,11 @@
   }
 }
 .card:hover {
-  transition: 0.5s;
-  opacity: 0.7;
+  background-color: black;
+  background-image: none !important;
+
   span {
-    color: black;
+    font-size: 1.7em;
+    margin-top: 40%;
   }
 }

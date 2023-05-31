@@ -36,9 +36,8 @@
   flex-direction: row;
   height: 8%;
   align-items: center;
-  justify-content: center;
   border: 1px solid #e8e8e8;
-  padding-left: 5em;
+  padding: 0 15%;
   box-shadow: 0 0 24px rgba(0,0,0,.1);
   -webkit-box-shadow: 0 0 24px rgba(0,0,0,.1);
   -moz-box-shadow: 0 0 24px rgba(0,0,0,.1);
@@ -48,12 +47,10 @@
       width: 13vh;
     }
   }
-  nav{
-    padding-left:4em;
-  }
   li{
     letter-spacing: 1px;
     font-weight: 500;
+    margin: 0.4em;
   }
 }
 
@@ -81,4 +78,9 @@ li a {
 li a:hover {
   // background-color: #ddd;
   color: #f32323;
+}
+
+.menu-icon{
+  position: absolute;
+  right: 0;
 }
