@@ -15,6 +15,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BlogComponent } from './blog/blog.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { HakkimizdaComponent } from './hakkimizda/hakkimizda.component';
+import { IletisimComponent } from './iletisim/iletisim.component';
+import { EkibimizComponent } from './ekibimiz/ekibimiz.component';
+import { MakaleYazmaComponent } from './makale-yazma/makale-yazma.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { FormsModule } from '@angular/forms';
     MenuHeaderComponent,
     FooterComponent,
     UzmanlikAlanlariComponent,
-    BlogComponent
+    BlogComponent,
+    HakkimizdaComponent,
+    IletisimComponent,
+    EkibimizComponent,
+    MakaleYazmaComponent
   ],
   imports: [
     BrowserModule,

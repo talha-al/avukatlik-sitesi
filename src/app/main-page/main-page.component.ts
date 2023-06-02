@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent {
+  constructor(private elementRef: ElementRef,private renderer: Renderer2) {}
+
   uzmanlikAlanlar=[
     "Şirketler Hukuku",
     "Ceza Hukuku",
@@ -24,4 +26,16 @@ export class MainPageComponent {
     "Perihan Terzi",
     "Perihan Terzi",
   ]
+
+  @HostListener('window:scroll', ['$event']) onScrollEvent() {
+    let element = document.getElementById("ekibimiz");
+    console.log(window.scrollY);
+    console.log(screen.height);
+
+    if (window.scrollY > screen.height / 3.5) {
+      console.log("Girdi!!");
+
+      element?.classList.add("centerToOuter");
+    }
+  }
 }
