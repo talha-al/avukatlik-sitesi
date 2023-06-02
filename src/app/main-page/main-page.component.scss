@@ -1,6 +1,7 @@
 .section-1 {
-  background: url(/assets/books.jpg);
-  background-color: #1e7a7a;
+  // background: url(/assets/books.jpg);
+  background-image: radial-gradient(#021027, #000000);
+  // background-color: #1e7a7a;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,10 +10,48 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: slideInRight  1s ease-in;
+  // animation: slideInRight  1s ease-in;
+  // transition: 2s;
+  animation-delay: 1s;
   button {
     width: 20vh;
     height: 4vh;
+  }
+}
+
+.section-2{
+  background-image: radial-gradient(#b5b5b5, #8ea0dc);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // animation: slideInRight  1s ease-in;
+  // transition: 2s;
+  animation-delay: 1s;
+  box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
+  -moz-box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
+  -webkit-box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
+  button {
+    width: 20vh;
+    height: 4vh;
+  }
+}
+
+.animated-text {
+  opacity: 0; // Başlangıçta metni silik yapmak için opaklığı sıfıra ayarlayın
+  animation: fade-in 2s ease-in-out forwards; // 2 saniyede tamamen görünmesi için fade-in animasyonunu kullanın
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; // Başlangıçta opaklık sıfır
+  }
+  100% {
+    opacity: 1; // Sonunda opaklık bir
   }
 }
 
@@ -199,3 +238,6 @@
 .menu {
   animation: slideInLeft 1s ease-in;
 }
+
+
+

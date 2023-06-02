@@ -22,6 +22,14 @@ export class MenuHeaderComponent {
     { name: 'Contact', id: 'contact' },
   ];
 
+  constructor(){
+    if(window.screen.width < 600){
+      this.isSmallScreen = true;
+    }else{
+      this.isSmallScreen=false;
+    }
+  }
+
   goToLink(link: string) {
     window.open(link);
   }

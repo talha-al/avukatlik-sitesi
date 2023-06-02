@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./ekibimiz.component.scss']
 })
 export class EkibimizComponent {
+  
+  avukatlar=[
+    "Perihan Terzi",
+    "Perihan Terzi",
+    "Perihan Terzi",
+    "Perihan Terzi",
+    "Perihan Terzi",
+  ]
+
+  goToLink(event:any){
+
+  }
 
 }

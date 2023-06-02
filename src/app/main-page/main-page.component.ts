@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -6,7 +7,7 @@ import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent {
-  constructor(private elementRef: ElementRef,private renderer: Renderer2) {}
+  constructor(private router: Router,private renderer: Renderer2) {}
 
   uzmanlikAlanlar=[
     "Şirketler Hukuku",
@@ -26,6 +27,10 @@ export class MainPageComponent {
     "Perihan Terzi",
     "Perihan Terzi",
   ]
+
+  goToIletisim(){
+    this.router.navigate(['iletisim']);
+  }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent() {
     let element = document.getElementById("ekibimiz");
