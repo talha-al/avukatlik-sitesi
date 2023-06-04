@@ -2,34 +2,33 @@
   <div class="info">
     <div class="cell">
       <mat-icon>call</mat-icon>
-      +90 5392 45 12
+      0544 549 9753
     </div>
     <div class="cell">
       <mat-icon>mail</mat-icon>
-      talhalatas@gmail
+      av.perihanterzi@gmail.com
     </div>
   </div>
 
   <div class="social-media">
-    <img src="assets/facebook-end.svg" (click)="goToLink(linkFaceBook)" width="16">
-    <img src="assets/instagram-end.svg" (click)="goToLink(linkInstagram)" width="16">
-    <img src="assets/twitter-end.svg" (click)="goToLink(linkTwitter)" width="16">
-
+    <i class="fa-brands fa-twitter" (click)="goToLink(linkLinkedin)" ></i>
+    <i class="fa-brands fa-instagram" (click)="goToLink(linkLinkedin)"></i>
+    <i class="fa-brands fa-linkedin-in" (click)="goToLink(linkLinkedin)"></i>
   </div>
 </div>
 
 <div class="menu">
   <div class="logo">
-    <a href="#"> <img src="assets/logo.png"> </a>
+    <!-- <a href="#"> <img src="assets/logo.svg"> </a> -->
   </div>
   <nav *ngIf="!isSmallScreen" class="nav-menu">
     <ul>
-      <li><a href="">Anasayfa</a></li>
-      <li><a href="hakkimizda">Hakkımızda</a></li>
-      <li><a href="uzmanlik-alanlari">Uzmanlık Alanları</a></li>
-      <li><a href="ekibimiz">Ekibimiz</a></li>
-      <li><a href="blog">Blog</a></li>
-      <li><a href="iletisim">İletişim</a></li>
+      <li><a [routerLink]="['/home']" >Anasayfa</a></li>
+      <li><a [routerLink]="['/hakkimizda']" >Hakkımızda</a></li>
+      <li><a [routerLink]="['/uzmanlik-alanlari']" >Uzmanlık Alanları</a></li>
+      <li><a [routerLink]="['/ekibimiz']" >Ekibimiz</a></li>
+      <li><a [routerLink]="['/blog']" >Makale</a></li>
+      <li><a [routerLink]="['/iletisim']" >İletişim</a></li>
     </ul>
   </nav>
   <div *ngIf="isSmallScreen" class="menu-icon" fxLayoutAlign="end center">
@@ -46,4 +45,3 @@
   </div>
 
 </div>
-

@@ -19,6 +19,7 @@ import { HakkimizdaComponent } from './hakkimizda/hakkimizda.component';
 import { IletisimComponent } from './iletisim/iletisim.component';
 import { EkibimizComponent } from './ekibimiz/ekibimiz.component';
 import { MakaleYazmaComponent } from './makale-yazma/makale-yazma.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { MakaleYazmaComponent } from './makale-yazma/makale-yazma.component';
     HakkimizdaComponent,
     IletisimComponent,
     EkibimizComponent,
-    MakaleYazmaComponent
+    MakaleYazmaComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { MakaleYazmaComponent } from './makale-yazma/makale-yazma.component';
     MatCardModule,
     MatMenuModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

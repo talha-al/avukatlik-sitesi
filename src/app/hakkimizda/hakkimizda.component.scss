@@ -1,3 +1,10 @@
+.container{
+     // background: url(/assets/books.jpg);
+  // background: url(https://i.pinimg.com/564x/8e/5e/ea/8e5eeae8f38e6dfeced4a6aa55ebd45e.jpg);
+  // background-image: url(https://i.pinimg.com/564x/db/4d/d2/db4dd2a0f24a51d32f37a0564409c5e8.jpg);
+  height: 70%;
+}
+
 .hakkimizda-img{
   animation: slideInRight  1s ease-in;
 
@@ -7,7 +14,7 @@
   padding: 3% 15%;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 1em;
   box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
   -moz-box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
@@ -19,112 +26,3 @@
 
 }
 
-
-
-// html,
-// body {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// body {
-//   background-image: radial-gradient(#021027, #000000);
-// }
-
-.container {
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(#021027, #000000);
-
-}
-
-.circle-container {
-  $particleWidth: 10px;
-  $particleNum: 200;
-  $particleColor: hsl(180, 100%, 80%);
-
-  position: absolute;
-  transform: translateY(-10vh);
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-
-  .circle {
-    width: 100%;
-    height: 30%;
-    border-radius: 50%;
-    mix-blend-mode: screen;
-    background-image: radial-gradient(
-      hsl(180, 100%, 80%),
-      hsl(180, 100%, 80%) 10%,
-      hsla(180, 100%, 80%, 0) 56%
-    );
-
-    animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
-
-    @keyframes fade-frames {
-      0% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.7;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes scale-frames {
-      0% {
-        transform: scale3d(0.4, 0.4, 1);
-      }
-
-      50% {
-        transform: scale3d(2.2, 2.2, 1);
-      }
-
-      100% {
-        transform: scale3d(0.4, 0.4, 1);
-      }
-    }
-  }
-
-  @for $i from 1 through $particleNum {
-    &:nth-child(#{$i}) {
-      $circleSize: random($particleWidth);
-      width: $circleSize + px;
-      height: $circleSize + px;
-
-      $startPositionY: random(10) + 100;
-      $framesName: "move-frames-" + $i;
-      $moveDuration: 7000 + random(4000) + ms;
-
-      animation-name: #{$framesName};
-      animation-duration: $moveDuration;
-      animation-delay: random(11000) + ms;
-
-      @keyframes #{$framesName} {
-        from {
-          transform: translate3d(
-            #{random(100) + vw},
-            #{$startPositionY + vh},
-            0
-          );
-        }
-
-        to {
-          transform: translate3d(
-            #{random(100) + vw},
-            #{- $startPositionY - random(30) + vh},
-            0
-          );
-        }
-      }
-
-      .circle {
-        animation-delay: random(4000) + ms;
-      }
-    }
-  }
-}

@@ -1,25 +1,39 @@
 .section-1 {
   // background: url(/assets/books.jpg);
-  background-image: radial-gradient(#021027, #000000);
+  // background: url(https://i.pinimg.com/564x/8e/5e/ea/8e5eeae8f38e6dfeced4a6aa55ebd45e.jpg);
+  // background-image: url(https://i.pinimg.com/564x/db/4d/d2/db4dd2a0f24a51d32f37a0564409c5e8.jpg);
+  // background-image: url(https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80);
+  background: rgba(0, 0, 0, 0.65)
+    url("https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+  background-blend-mode: darken;
+  // background-image: radial-gradient(#021027, #000000);
   // background-color: #1e7a7a;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 400px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   // animation: slideInRight  1s ease-in;
   // transition: 2s;
   animation-delay: 1s;
-  button {
-    width: 20vh;
-    height: 4vh;
+  .desrc {
+    position: absolute;
+    left: 5%;
+    top: 25%;
+    button {
+      width: 20vh;
+      height: 4vh;
+      border: 1px solid;
+      color: white;
+      background-color: transparent !important;
+    }
   }
 }
 
-.section-2{
+.section-2 {
   background-image: radial-gradient(#b5b5b5, #8ea0dc);
   background-position: center center;
   background-repeat: no-repeat;
@@ -29,8 +43,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // animation: slideInRight  1s ease-in;
-  // transition: 2s;
   animation-delay: 1s;
   box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
   -moz-box-shadow: 0 0 32px rgba(10, 10, 10, 0.08);
@@ -42,24 +54,22 @@
 }
 
 .animated-text {
-  opacity: 0; // Başlangıçta metni silik yapmak için opaklığı sıfıra ayarlayın
-  animation: fade-in 2s ease-in-out forwards; // 2 saniyede tamamen görünmesi için fade-in animasyonunu kullanın
+  opacity: 0;
+  animation: fade-in 2s ease-in-out forwards;
 }
 
 @keyframes fade-in {
   0% {
-    opacity: 0; // Başlangıçta opaklık sıfır
+    opacity: 0;
   }
   100% {
-    opacity: 1; // Sonunda opaklık bir
+    opacity: 1;
   }
 }
 
-.text-2 {
-  font-size: 1.4em;
-  font-weight: 500;
+.text-property {
   z-index: 5;
-  line-height: 40px;
+  line-height: 4rem;
   color: rgb(255, 255, 255);
   font-family: Lato;
   visibility: inherit;
@@ -73,36 +83,29 @@
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   transform-origin: 50% 50% 0px;
   padding-bottom: 0.8em;
+}
+
+.sub-text {
+  @extend .text-property;
+  font-size: 20px !important;
 }
 
 .text {
-  font-size: 2.8em;
+  @extend .text-property;
+  width: 75%;
+  font-size: 3em;
   font-weight: 700;
-  z-index: 5;
-  line-height: 40px;
-  color: rgb(255, 255, 255);
-  font-family: Lato;
-  visibility: inherit;
-  transition: none 0s ease 0s;
-  text-align: left;
-  border-width: 0px;
-  margin: 0px;
-  padding: 0px;
-  letter-spacing: 0px;
-  opacity: 1;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transform-origin: 50% 50% 0px;
-  padding-bottom: 0.8em;
+  // text-shadow: 1px 1px 10px #000, 5px 5px 20px #000, 1px 0px 20px #def;
 }
 
-.section {
-  padding: 3% 15%;
-  text-align: center;
+.text-2 {
+  @extend .text-property;
+  font-size: 1.4em;
+  font-weight: 500;
 }
 
-.text-container{
-  animation: slideInLeft  1s ease-in;
-
+.text-container {
+  animation: slideInLeft 1s ease-in;
 }
 
 .description {
@@ -111,9 +114,14 @@
   font-size: 14px;
 }
 
-.hakkimizda-img{
-  animation: slideInRight  1s ease-in;
+.hakkimizda-img {
+  animation: slideInRight 1s ease-in;
+  width: 75%;
+}
 
+.section {
+  padding: 3% 15%;
+  text-align: center;
 }
 
 .hakkimizda-container {
@@ -140,104 +148,18 @@
   @extend .section;
 }
 
-
-.avukat-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  // animation: centerToOuter 1.8s;
-}
-
 .centerToOuter {
   animation: centerToOuter 1.8s;
 }
 
+@media screen and (max-width: 800px) {
+  .text {
+    font-size: 2em !important;
+    line-height: 3rem !important;
+    width: 100% !important;
+  }
 
-// .avukat-card{
-//   height: 20vh;
-//   width: 19%;
-//   min-width: 120px;
-//   margin: 0.5%;
-//   background: url(/assets/books.jpg);
-//   display: flex;
-//   justify-content: center;
-//   align-items: end;
-//   span{
-//     color: white;
-//     font-size: 1.4em;
-//     font-weight: 500;
-//     text-align: center;
-//   }
-// }
-
-.example-card {
-  max-width: 300px;
-  min-width: 150px;
-  margin-right: 5%;
-  margin-bottom: 5%;
-  animation: grow 1.5s ease-out;
-  cursor: pointer;
-}
-
-.example-card:hover {
-  overflow: hidden;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-
-  img {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-    transition: 0.5s ease-in-out;
-    opacity: 0.8;
+  .sub-text {
+    font-size: 16px !important;
   }
 }
-
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-
-
-// @keyframes slideInRight {
-//   from {
-//     transform: translateX(100%);
-//     opacity: 0;
-//   }
-//   to {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes slideInLeft {
-//   from {
-//     transform: translateX(-100%);
-//     opacity: 0;
-//   }
-//   to {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
-
-.logo {
-  animation: slideInLeft 1s ease-in;
-}
-
-.menu-toggle {
-  animation: slideInRight 1s ease-in;
-}
-
-.menu {
-  animation: slideInLeft 1s ease-in;
-}
-
-
-

@@ -60,3 +60,24 @@
   width: 80%;
   padding-left: 3em;
 }
+
+.social-media{
+  cursor: pointer;
+  i{
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 12px;
+    margin-right: 12px;
+  }
+  i:hover{
+    background-color: white;
+    color: #291b1b;
+      transform: scale(1.05);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition: 0.59s;
+  }
+}
