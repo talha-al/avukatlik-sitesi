@@ -1,11 +1,13 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, UrlTree } from '@angular/router';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-menu-header',
   templateUrl: './menu-header.component.html',
   styleUrls: ['./menu-header.component.scss']
 })
-export class MenuHeaderComponent {
+export class MenuHeaderComponent implements AfterViewInit, AfterContentChecked {
 
   linkInstagram = LinkConstants.linkInstagram;
   linkFaceBook = LinkConstants.linkFaceBook;
@@ -22,13 +24,33 @@ export class MenuHeaderComponent {
     { name: 'Contact', id: 'contact' },
   ];
 
-  constructor(){
-    if(window.screen.width < 600){
+  constructor(private route: ActivatedRoute) {
+    const url = this.route;
+    console.log(route.snapshot.queryParamMap);
+    console.log(url);
+
+    if (window.screen.width < 600) {
       this.isSmallScreen = true;
-    }else{
-      this.isSmallScreen=false;
+    } else {
+      this.isSmallScreen = false;
     }
   }
+  ngAfterViewInit() {
+
+    console.log("1Girdi");
+
+  }
+
+  ngAfterContentChecked(): void {
+      console.log("window.location:",window.location.pathname);
+    if(window.location.pathname == "/home"){
+      document.getElementById("")?.classList.add("menu");
+      document.getElementById("")?.classList.remove("menu");
+    }else{
+      document.getElementById("")?.classList.remove("");
+    }
+  }
+
 
   goToLink(link: string) {
     window.open(link);
@@ -36,7 +58,7 @@ export class MenuHeaderComponent {
 
   @HostListener('window:resize')
   onWindowResize() {
-    if (window.screen.width < 600) {
+    if (window.screen.width < 830) {
       this.isSmallScreen = true;
 
     } else {
@@ -47,8 +69,8 @@ export class MenuHeaderComponent {
 
 
 export enum LinkConstants {
-  linkInstagram = "https://www.instagram.com/talhaalatas/",
+  linkInstagram = "",
   linkFaceBook = "https://www.facebook.com/talhaseref.alatas/",
-  linkLinkedin = "https://www.linkedin.com/in/talhaalatas/",
+  linkLinkedin = "https://www.linkedin.com/in/perihan-terzi/",
   linkTwitter = "https://twitter.com/talhaalatass",
 }
