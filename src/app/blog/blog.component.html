@@ -1,14 +1,17 @@
-<div class="container">
-  <h3>MAKALE</h3>
-  <mat-form-field style="width: 50%;" appearance="outline">
-    <mat-label>Başlık girin</mat-label>
-    <input matInput type="text" placeholder="Başlık girin" class="header-input" [(ngModel)]="headerInput">
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Makale yazın</mat-label>
-    <textarea matInput [(ngModel)]="articleInput" placeholder="Makale yazın" class="article-input"></textarea>
-  </mat-form-field>
-  <div>
-    <button mat-raised-button color="primary" class="submit-button" (click)="submit()">Gönder</button>
+<div class="content">
+
+  <div *ngFor="let blog of keyArray;index as index">
+    <div class="card">
+      <img class="hakkimizda-img"
+        src="https://asahukuk.com/wp-content/uploads/2019/02/nastuh-abootalebi-284883-unsplash.jpg"
+        style="width: 100%;">
+      <h3>{{ blogs[blog]?.title }}</h3>
+      <div> {{ blogs[blog]?.date }} </div>
+
+    </div>
   </div>
+
+  <!-- <div>
+    {{ blogs[blog].content }}
+  </div> -->
 </div>

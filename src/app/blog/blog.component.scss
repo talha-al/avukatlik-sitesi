@@ -9,3 +9,31 @@
 textarea{
   height: 20vh !important;
 }
+
+.content{
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+}
+
+.card{
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  padding: 30px 20px;
+  width: 240px;
+  margin: 8px;
+  box-shadow: 5px 5px 4px 0 rgba(0,0,0,0.15);
+
+  img{
+    height: 231px;
+    width: 325px;
+    margin: 0;
+  }
+
+  h3{
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-family: 'Playfair Display',serif;
+  }
+}

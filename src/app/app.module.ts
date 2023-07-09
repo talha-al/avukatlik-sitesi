@@ -20,6 +20,10 @@ import { IletisimComponent } from './iletisim/iletisim.component';
 import { EkibimizComponent } from './ekibimiz/ekibimiz.component';
 import { MakaleYazmaComponent } from './makale-yazma/makale-yazma.component';
 import { RouterModule } from '@angular/router';
+import { FirebaseAppModule, initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { RouterModule } from '@angular/router';
     MatMenuModule,
     MatInputModule,
     FormsModule,
-    RouterModule.forRoot([])
+    HttpClientModule,
+    RouterModule.forRoot([]),
+    FirebaseAppModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

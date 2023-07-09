@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'hakkimizda',component: HakkimizdaComponent},
   {path:'iletisim',component: IletisimComponent},
   {path:'blog',component: BlogComponent},
-  {path:'makale-yazma',component: MakaleYazmaComponent},
+  {path:'makale',component: MakaleYazmaComponent},
   // {path:'404',component: ErrorPageComponent},
   // { path: '**', pathMatch: 'full', component: ErrorPageComponent},
 ];

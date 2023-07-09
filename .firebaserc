@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "terzi-firebase"
+  },
+  "targets": {
+    "terzi-firebase": {
+      "hosting": {
+        "avukatlik": [
+          "terzi-firebase"
+        ]
+      }
+    }
+  }
+}

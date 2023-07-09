@@ -1,6 +1,8 @@
 import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, UrlTree } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-menu-header',
@@ -24,10 +26,10 @@ export class MenuHeaderComponent implements AfterViewInit, AfterContentChecked {
     { name: 'Contact', id: 'contact' },
   ];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private _http: HttpClient) {
     const url = this.route;
-    console.log(route.snapshot.queryParamMap);
-    console.log(url);
+    // console.log(route.snapshot.queryParamMap);
+    // console.log(url);
 
     if (window.screen.width < 600) {
       this.isSmallScreen = true;
@@ -36,19 +38,37 @@ export class MenuHeaderComponent implements AfterViewInit, AfterContentChecked {
     }
   }
   ngAfterViewInit() {
+    // const app = initializeApp(environment.firebase);
 
-    console.log("1Girdi");
+    // const db = getDatabase();
+    // set(ref(db, 'docs/1'), {
+    //   id: 1,
+    //   text: "testttt22",
+    // });
+
+    // const dbRef = ref(getDatabase());
+    // get(child(dbRef, 'docs/')).then((snapshot) => {
+    //   console.log("snapshot", snapshot);
+
+    //   if (snapshot.exists()) {
+    //     console.log(snapshot.val());
+    //   } else {
+    //     console.log("No data available");
+    //   }
+    // }).catch((error) => {
+    //   console.error(error);
+    // });
 
   }
 
   ngAfterContentChecked(): void {
-      console.log("window.location:",window.location.pathname);
-    if(window.location.pathname == "/home"){
-      document.getElementById("")?.classList.add("menu");
-      document.getElementById("")?.classList.remove("menu");
-    }else{
-      document.getElementById("")?.classList.remove("");
-    }
+    //   console.log("window.location:",window.location.pathname);
+    // if(window.location.pathname == "/home"){
+    //   document.getElementById("")?.classList.add("menu");
+    //   document.getElementById("")?.classList.remove("menu");
+    // }else{
+    //   document.getElementById("")?.classList.remove("");
+    // }
   }
 
 
