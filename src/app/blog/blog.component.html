@@ -1,17 +1,13 @@
+<h1 class="header">Makeleler</h1>
 <div class="content">
-
-  <div *ngFor="let blog of keyArray;index as index">
+  <div *ngFor="let blog of keyArray;index as index" style="max-width: 290px; min-width: 290px;">
     <div class="card">
       <img class="hakkimizda-img"
         src="https://asahukuk.com/wp-content/uploads/2019/02/nastuh-abootalebi-284883-unsplash.jpg"
         style="width: 100%;">
       <h3>{{ blogs[blog]?.title }}</h3>
-      <div> {{ blogs[blog]?.date }} </div>
+      <div> {{ blogs[blog]?.content }} </div>
 
     </div>
   </div>
-
-  <!-- <div>
-    {{ blogs[blog].content }}
-  </div> -->
 </div>

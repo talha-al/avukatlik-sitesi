@@ -1,39 +1,47 @@
-
-.container{
+.container {
   display: flex;
   flex-direction: column;
   padding: 5% 20%;
-
 }
 
-textarea{
+.header {
+  background-color: #f2f2f2;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  margin: 0;
+}
+
+textarea {
   height: 20vh !important;
 }
 
-.content{
+.content {
   background-color: #f2f2f2;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.card{
+.card {
   display: flex;
   background-color: #ffffff;
   flex-direction: column;
   padding: 30px 20px;
   width: 240px;
   margin: 8px;
-  box-shadow: 5px 5px 4px 0 rgba(0,0,0,0.15);
+  box-shadow: 5px 5px 4px 0 rgba(0, 0, 0, 0.15);
 
-  img{
+  img {
     height: 231px;
     width: 325px;
     margin: 0;
   }
 
-  h3{
+  h3 {
     font-size: 1.5rem;
     line-height: 1.2;
-    font-family: 'Playfair Display',serif;
+    font-family: "Playfair Display", serif;
   }
 }

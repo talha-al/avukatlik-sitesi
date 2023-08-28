@@ -1,7 +1,9 @@
 .container{
+  position: fixed;
+  width: -webkit-fill-available;
+  bottom: 0;
   height: auto;
   background-color: #000000e0;
-  // background-color: #13161d;
   color: white;
   display: flex;
   flex-direction: column;

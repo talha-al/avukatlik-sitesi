@@ -9,7 +9,7 @@ import { EkibimizComponent } from './ekibimiz/ekibimiz.component';
 import { MakaleYazmaComponent } from './makale-yazma/makale-yazma.component';
 
 const routes: Routes = [
-  {path:'',component: MainPageComponent},
+  {path:'', redirectTo: '/home', pathMatch: 'full'},
   {path:'home',component: MainPageComponent},
   {path:'uzmanlik-alanlari',component: UzmanlikAlanlariComponent},
   {path:'ekibimiz',component: EkibimizComponent},
@@ -17,8 +17,8 @@ const routes: Routes = [
   {path:'iletisim',component: IletisimComponent},
   {path:'blog',component: BlogComponent},
   {path:'makale',component: MakaleYazmaComponent},
-  // {path:'404',component: ErrorPageComponent},
-  // { path: '**', pathMatch: 'full', component: ErrorPageComponent},
+  {path:'**', redirectTo: '/home', pathMatch: 'full'},
+
 ];
 
 @NgModule({

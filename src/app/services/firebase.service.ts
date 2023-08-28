@@ -19,20 +19,6 @@ export class FirebaseService {
 
   }
 
-
-  getDocTest() {
-    const db = getDatabase();
-    const ref = firebase.database().ref('docs');
-
-    onValue(ref, (snapshot) => {
-      console.log("---", snapshot.val());
-
-      const data = snapshot.val();
-      return data;
-
-    });
-  }
-
   getDocs() {
     get(child(this.dbRef, 'docs/')).then((snapshot) => {
       if (snapshot.exists()) {
@@ -43,10 +29,6 @@ export class FirebaseService {
       console.error(error);
     })
     return this.blogs
-    // .finally(() => {
-    //   console.log("test",this.blogs);
-    //   return this.blogs;
-    // });
   }
 
   getDoc(){

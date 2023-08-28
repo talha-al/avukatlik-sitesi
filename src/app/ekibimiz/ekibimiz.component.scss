@@ -1,7 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Josefin+Sans:400,700";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 .container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1rem 0px;
 }
 
@@ -14,9 +17,6 @@
         margin-right: 0.4em
     }
   }
-
-
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 * {
   box-sizing: border-box;
@@ -40,8 +40,6 @@ body {
 h1 {
   font-size: 2.2em;
 }
-
-// base
 .flip {
     position: relative;
     >.front,
@@ -86,8 +84,6 @@ h1 {
         }
     }
 }
-
-// custom
 .flip {
     position: relative;
     display: inline-block;
@@ -119,79 +115,3 @@ h1 {
 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
 
-
-// body {
-//   margin: 0;
-//   padding: 0;
-//   font-family: "Josefin Sans", sans-serif;
-//   background-color: #eee;
-// }
-// body a {
-//   color: #ffffff;
-//   text-decoration: none;
-// }
-
-// .card {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   height: 400px;
-//   width: 300px;
-//   transform: translate(-50%, -50%);
-//   transform-style: preserve-3d;
-//   perspective: 600px;
-//   transition: 0.5s;
-// }
-// .card:hover .card-front {
-//   transform: rotateX(-180deg);
-// }
-// .card:hover .card-back {
-//   transform: rotateX(0deg);
-// }
-
-// .card-front {
-//   height: 100%;
-//   width: 100%;
-//   background-image: url(https://99px.ru/sstorage/56/2013/12/image_563012130153328414049.jpg);
-//   background-position: 50% 50%;
-//   background-size: cover;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   background-color: #000000;
-//   backface-visibility: hidden;
-//   transform: rotateX(0deg);
-//   transition: 0.5s;
-// }
-
-// .card-back {
-//   height: 100%;
-//   width: 100%;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   background-color: #000000;
-//   backface-visibility: hidden;
-//   transform: rotateX(180deg);
-//   transition: 0.5s;
-//   color: #ffffff;
-//   text-align: center;
-// }
-// .card-back h2 {
-//   margin: 60% auto 35% auto;
-//   font-size: 26px;
-// }
-// .card-back h2 span {
-//   font-size: 20px;
-// }
-// .card-back a {
-//   height: 20px;
-//   width: 20px;
-//   padding: 5px 5px;
-//   border-radius: 4px;
-//   line-height: 20px;
-// }
-// .card-back a:hover {
-//   color: #000000;
-//   background-color: #fff;
-// }

@@ -2,33 +2,33 @@
   <div class="info">
     <div class="cell">
       <mat-icon>call</mat-icon>
-      0544 549 9753
+      <a href="tel://05445499753">0544 549 9753</a>
     </div>
     <div class="cell">
       <mat-icon>mail</mat-icon>
-      av.perihanterzi@gmail.com
+        <a href="mailto:av.perihanterzi@gmail.com">av.perihanterzi@gmail.com</a>
     </div>
   </div>
 
   <div class="social-media">
-    <i class="fa-brands fa-twitter" (click)="goToLink(linkLinkedin)" ></i>
+    <i class="fa-brands fa-twitter" (click)="goToLink(linkLinkedin)"></i>
     <i class="fa-brands fa-instagram" (click)="goToLink(linkLinkedin)"></i>
     <i class="fa-brands fa-linkedin-in" (click)="goToLink(linkLinkedin)"></i>
   </div>
 </div>
 
-<div class="menu">
+<div class="menu" id="menu">
   <div class="logo">
     <!-- <a href="#"> <img src="assets/logo.svg"> </a> -->
   </div>
   <nav *ngIf="!isSmallScreen" class="nav-menu">
     <ul>
-      <li><a [routerLink]="['/home']" >Anasayfa</a></li>
-      <li><a [routerLink]="['/hakkimizda']" >Hakkımızda</a></li>
-      <li><a [routerLink]="['/uzmanlik-alanlari']" >Uzmanlık Alanları</a></li>
-      <li><a [routerLink]="['/ekibimiz']" >Ekibimiz</a></li>
-      <li><a [routerLink]="['/blog']" >Makale</a></li>
-      <li><a [routerLink]="['/iletisim']" >İletişim</a></li>
+      <li><a [routerLink]="['/home']">Anasayfa</a></li>
+      <li><a [routerLink]="['/hakkimizda']">Hakkımızda</a></li>
+      <li><a [routerLink]="['/uzmanlik-alanlari']">Uzmanlık Alanları</a></li>
+      <li><a [routerLink]="['/ekibimiz']">Ekibimiz</a></li>
+      <li><a [routerLink]="['/blog']">Makale</a></li>
+      <li><a [routerLink]="['/iletisim']">İletişim</a></li>
     </ul>
   </nav>
   <div *ngIf="isSmallScreen" class="menu-icon" fxLayoutAlign="end center">
@@ -36,10 +36,11 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #belowMenu="matMenu" class="small-menu" yPosition="below">
-      <div *ngFor="let cat of categories">
-        <div class="category" fxFlex="1 1 auto" color="primary">
+      <mat-icon class="close-icon">close</mat-icon>
+      <div *ngFor="let cat of categories" class="categories">
+        <a class="category" fxFlex="1 1 auto" color="primary" [routerLink]="['/'+cat.id]">
           {{ cat.name }}
-        </div>
+        </a>
       </div>
     </mat-menu>
   </div>

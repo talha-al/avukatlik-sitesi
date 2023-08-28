@@ -1,15 +1,12 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, UrlTree } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-
-import { environment } from 'src/environments/environment';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-header',
   templateUrl: './menu-header.component.html',
   styleUrls: ['./menu-header.component.scss']
 })
-export class MenuHeaderComponent implements AfterViewInit, AfterContentChecked {
+export class MenuHeaderComponent implements AfterViewInit {
 
   linkInstagram = LinkConstants.linkInstagram;
   linkFaceBook = LinkConstants.linkFaceBook;
@@ -20,17 +17,16 @@ export class MenuHeaderComponent implements AfterViewInit, AfterContentChecked {
   menu!: HTMLElement;
 
   categories = [
-    { name: 'Home', id: 'home' },
-    { name: 'About Me', id: 'aboutUs' },
-    { name: 'Photos', id: 'photos' },
-    { name: 'Contact', id: 'contact' },
+    { name: 'Ana Sayfa', id: 'home' },
+    { name: 'Hakkımızda', id: 'hakkimizda' },
+    { name: 'Uzmanlık Alanları', id: 'uzmanlik-alanlari' },
+    { name: 'Ekibimiz', id: 'ekibimiz' },
+    { name: 'Blog', id: 'blog' },
+    { name: 'İletişim', id: 'iletisim' },
+
   ];
 
-  constructor(private route: ActivatedRoute, private _http: HttpClient) {
-    const url = this.route;
-    // console.log(route.snapshot.queryParamMap);
-    // console.log(url);
-
+  constructor(private _router: Router) {
     if (window.screen.width < 600) {
       this.isSmallScreen = true;
     } else {
@@ -38,39 +34,17 @@ export class MenuHeaderComponent implements AfterViewInit, AfterContentChecked {
     }
   }
   ngAfterViewInit() {
-    // const app = initializeApp(environment.firebase);
-
-    // const db = getDatabase();
-    // set(ref(db, 'docs/1'), {
-    //   id: 1,
-    //   text: "testttt22",
-    // });
-
-    // const dbRef = ref(getDatabase());
-    // get(child(dbRef, 'docs/')).then((snapshot) => {
-    //   console.log("snapshot", snapshot);
-
-    //   if (snapshot.exists()) {
-    //     console.log(snapshot.val());
-    //   } else {
-    //     console.log("No data available");
-    //   }
-    // }).catch((error) => {
-    //   console.error(error);
-    // });
-
+    this._router.events.subscribe(a => {
+      const currentUrl = window.location.pathname;
+      if (currentUrl !== "/home") {
+        document.documentElement.style.setProperty("--pos", "inherit");
+        document.documentElement.style.setProperty("--bg-color", "#535353");
+      } else {
+        document.documentElement.style.setProperty("--pos", "absolute");
+        document.documentElement.style.setProperty("--bg-color", "transparent");
+      }
+    });
   }
-
-  ngAfterContentChecked(): void {
-    //   console.log("window.location:",window.location.pathname);
-    // if(window.location.pathname == "/home"){
-    //   document.getElementById("")?.classList.add("menu");
-    //   document.getElementById("")?.classList.remove("menu");
-    // }else{
-    //   document.getElementById("")?.classList.remove("");
-    // }
-  }
-
 
   goToLink(link: string) {
     window.open(link);

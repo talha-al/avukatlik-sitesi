@@ -22,8 +22,6 @@ export class BlogComponent {
     this._firebaseService.getDocs();
     setTimeout(() => {
       this.blogs = this._firebaseService.getDoc();
-      // console.log("blogs", this.blogs);
-      // console.log("blogs", this.blogs.entries());
 
       for (const [key, value] of Object.entries(this.blogs)) {
         console.log(`${key}: ${value}`);
